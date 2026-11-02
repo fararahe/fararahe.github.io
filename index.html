@@ -1,12 +1,555 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth light">
 
 <head>
-    <title>Fararahe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faradyna Rahma Hendri</title>
+    <meta name="description"
+        content="Portfolio of Faradyna Rahma Hendri. Android Developer with 6+ years of experience specializing in Native Android (Kotlin/Java), FinTech payment terminals (EDC, QRIS, POS, ECR), and modern web platforms.">
+    <meta name="author" content="Faradyna Rahma Hendri">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="Faradyna Rahma Hendri — Portfolio">
+    <meta property="og:description"
+        content="Android & Mobile Solutions Engineer with 6+ years building production banking, POS/EDC, and web apps.">
+    <meta property="og:type" content="website">
+
+    <!-- Immediate Dark / Light Mode Script to Prevent Flash (Default: Light) -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        tech: {
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e',
+                            violet: '#8b5cf6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
-    <h1>Fararahe</h1>
+<body
+    class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span
+                    class="w-9 h-9 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center font-mono font-bold text-white text-sm shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    FR
+                </span>
+                <div class="flex flex-col">
+                    <span
+                        class="font-bold text-sm tracking-tight text-white group-hover:text-indigo-400 transition-colors">Faradyna
+                        Rahma Hendri</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#companies" class="hover:text-white transition-colors">Career</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-white transition-colors">Tech Stack</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggleBtn" aria-label="Toggle Theme"
+                    class="p-2 rounded-lg border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white hover:border-slate-700 transition">
+                    <svg id="themeIconSun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="themeIconMoon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <a href="mailto:faradyna.rahma@gmail.com"
+                    class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold tracking-wide shadow-md shadow-indigo-600/30 transition">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Get in Touch</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" aria-label="Open Menu"
+                    class="md:hidden p-2 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu"
+            class="hidden md:hidden border-b border-slate-800 bg-slate-950 px-4 py-3 space-y-2 text-sm">
+            <a href="#about" class="block py-1 text-slate-300 hover:text-white">About</a>
+            <a href="#companies" class="block py-1 text-slate-300 hover:text-white">Career</a>
+            <a href="#projects" class="block py-1 text-slate-300 hover:text-white">Projects</a>
+            <a href="#skills" class="block py-1 text-slate-300 hover:text-white">Tech Stack</a>
+            <a href="#contact" class="block py-1 text-slate-300 hover:text-white">Contact</a>
+            <a href="mailto:faradyna.rahma@gmail.com"
+                class="block py-2 text-indigo-400 font-semibold">faradyna.rahma@gmail.com</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-grid-pattern border-b border-slate-900 overflow-hidden pt-20 pb-24 lg:pt-28 lg:pb-32">
+        <!-- Glow accents -->
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-3xl">
+                <!-- Status Pill -->
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-mono font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Available for Full-time & Technical Consulting</span>
+                </div>
+
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+                    Android & Mobile Developer.
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-400 leading-relaxed mb-8">
+                    I'm <strong class="text-white font-semibold">Faradyna Rahma Hendri</strong>, a Native Android &
+                    Mobile Developer with
+                    <span class="text-indigo-400 font-medium">6+ years of production experience</span>. I build
+                    banking applications,
+                    EDC/POS terminal apps (BCA APOS, CIMB ECR, QRIS), and modern web platforms.
+                </p>
+
+                <!-- Action CTA -->
+                <div class="flex flex-wrap items-center gap-4 mb-12">
+                    <a href="#projects"
+                        class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/25 transition flex items-center gap-2">
+                        <span>Explore Projects</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/fararahe" target="_blank" rel="noopener noreferrer"
+                        class="px-5 py-3 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-sm transition flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        <span>github.com/fararahe</span>
+                    </a>
+                    <a href="mailto:faradyna.rahma@gmail.com"
+                        class="hero-email-btn px-5 py-3 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-sm transition flex items-center gap-2">
+                        <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>faradyna.rahma@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-block font-mono text-xs text-indigo-400 uppercase tracking-widest">About Me</div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white">
+                        Specialized in Android Apps and Embedded Payments.
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        With over six years of focused engineering across FinTech, enterprise POS hardware, and
+                        logistics,
+                        I bridge the gap between low-level hardware communication (smart cards, EMV chips, NFC, EDC
+                        devices, RFID, RFID Printer)
+                        and intuitive, pixel-perfect user interfaces.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Graduated with a GPA of 3.89 in Information Technology from Universitas YARSI, I have delivered
+                        financial software for local Indonesian banks, high-throughput delivery systems, and
+                        bioinformatics data suites.
+                    </p>
+
+                    <!-- Education Card -->
+                    <div class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Universitas YARSI — Jakarta</div>
+                            <div class="text-xs text-slate-400">Bachelor of Information Technology (S.Kom)</div>
+                            <div class="font-mono text-xs text-emerald-400 font-semibold mt-1">GPA: 3.89 / 4.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div
+                        class="p-5 rounded-2xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3 border border-emerald-500/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-white mb-2">POS & EDC Payments</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Deep experience integrating APOS BCA, ECR CIMB, Purwantara IPG, QRIS, Virtual Accounts, and
+                            EMV debit card protocols directly onto POS terminal devices.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-5 rounded-2xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3 border border-cyan-500/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-white mb-2">Real-time Telemetry</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            High-frequency socket communication using Socket.IO, RabbitMQ queues, and PyPl WebSockets
+                            for live location updates and instantaneous transaction settlement.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-5 rounded-2xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-3 border border-indigo-500/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-white mb-2">Architecture MVP & MVVM</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Experience applying industry-standard design patterns including MVP and MVVM, ensuring
+                            maintainability and separation of concerns in complex Android applications.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-5 rounded-2xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition">
+                        <div
+                            class="w-9 h-9 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center mb-3 border border-violet-500/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-white mb-2">Full-Stack & Web Apps</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Expanding into modern web ecosystems: Next.js/React CMS engines (Bimbel Kamaya), FARBETH,
+                            Ladyna and Drupal bioinformatics databases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Career Section -->
+    <section id="companies" class="py-20 border-b border-slate-900 bg-slate-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest mb-1">Professional Journey
+                    </div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white">Companies I Have Worked With</h2>
+                </div>
+            </div>
+
+            <!-- Timeline List (Populated dynamically from data/companies.json) -->
+            <div class="space-y-6" id="companiesList"></div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section id="projects" class="py-20 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest mb-1">Featured Work</div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white">Project Showcase</h2>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap gap-2 mb-10 border-b border-slate-800/80 pb-4">
+                <button
+                    class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold font-mono bg-indigo-600 text-white transition"
+                    data-filter="all">
+                    All Projects (8)
+                </button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold font-mono bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                    data-filter="company">
+                    Company Enterprise (4)
+                </button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold font-mono bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                    data-filter="personal">
+                    Personal & Studio (4)
+                </button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold font-mono bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                    data-filter="fintech">
+                    Android & FinTech (5)
+                </button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold font-mono bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                    data-filter="web">
+                    Web & Platforms (3)
+                </button>
+            </div>
+
+            <!-- Project Cards Grid (Populated dynamically from data/projects.json) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Technical Skills & Stack -->
+    <section id="skills" class="py-20 border-b border-slate-900 bg-slate-950/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-12">
+                <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest mb-1">Technical Stack</div>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Skills & Competencies</h2>
+                <p class="text-slate-400 text-sm mt-2">Tools, hardware protocols, and architectures applied across 6+
+                    years of production delivery.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Mobile Core -->
+                <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/30">
+                    <div class="font-mono text-xs text-indigo-400 mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                        <span>01 / MOBILE CORE</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">Native Android</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Kotlin &
+                            Java (Multiplatform)</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> MVVM, MVP &
+                            Clean Architecture</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Coroutines &
+                            StateFlow</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Jetpack
+                            Compose & XML</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Room DB &
+                            SQLite</li>
+                    </ul>
+                </div>
+
+                <!-- FinTech & Hardware -->
+                <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/30">
+                    <div class="font-mono text-xs text-emerald-400 mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span>02 / PAYMENTS & HARDWARE</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">FinTech & Terminals</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> EDC Android
+                            Devices</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> APOS BCA &
+                            ECR CIMB</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> QRIS &
+                            Virtual Accounts</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Google ML
+                            Kit OCR Scan</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Thermal
+                            Receipt Printers & RFID Printer</li>
+                    </ul>
+                </div>
+
+                <!-- Networking & Real-Time -->
+                <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/30">
+                    <div class="font-mono text-xs text-cyan-400 mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                        <span>03 / DATA & REAL-TIME</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">Networking</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Retrofit2 &
+                            OkHttp3</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Socket
+                            Connection (IP / TCP)</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Socket.IO
+                            Direct Push</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> RabbitMQ
+                            Event Queues</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> WebSocket
+                            Telemetry</li>
+                    </ul>
+                </div>
+
+                <!-- Web & Architecture -->
+                <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/30">
+                    <div class="font-mono text-xs text-amber-400 mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                        <span>04 / WEB & DESIGN</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">Web & Documentation</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Next.js &
+                            React 19</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> TypeScript &
+                            Tailwind CSS</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Figma to
+                            Pixel Implementation</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> PRD & FSD
+                            Technical Specs</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-600 font-mono">#</span> Git, GitHub
+                            Actions & CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 border-b border-slate-900 bg-grid-pattern">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-mono font-medium mb-6">
+                <span>Direct Collaboration</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                Let's Build Something Together.
+            </h2>
+
+            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Whether you need a mobile engineer or a full-stack platform built
+                from the ground up, feel free to reach out.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:faradyna.rahma@gmail.com"
+                    class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-xl shadow-indigo-600/30 transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>faradyna.rahma@gmail.com</span>
+                </a>
+
+                <button id="copyEmailBtn"
+                    class="w-full sm:w-auto px-5 py-3.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-xs transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span id="copyEmailText">Copy Email</span>
+                </button>
+
+                <a href="https://github.com/fararahe" target="_blank" rel="noopener noreferrer"
+                    class="w-full sm:w-auto px-5 py-3.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-xs transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    <span>fararahe</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 text-slate-500 text-xs">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-300">Faradyna Rahma Hendri</span>
+                <span>•</span>
+                <span>Jakarta, Indonesia</span>
+            </div>
+            <div class="font-mono text-[11px]">
+                Built for GitHub Pages (fararahe.github.io)
+            </div>
+        </div>
+    </footer>
+
+    <!-- Data Layer -->
+    <script src="data/companies.js"></script>
+    <script src="data/projects.js"></script>
+
+    <!-- Services & Repositories (Clean Architecture) -->
+    <script src="js/services/themeService.js"></script>
+    <script src="js/services/imageService.js"></script>
+    <script src="js/repositories/portfolioRepository.js"></script>
+
+    <!-- Presentation Components -->
+    <script src="js/components/companyCard.js"></script>
+    <script src="js/components/projectCard.js"></script>
+
+    <!-- Application Bootstrap -->
+    <script src="js/app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,369 @@
+/* ==========================================================================
+   Base & Scrollbar Styles
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Subtle grid background */
+.bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.light .bg-grid-pattern {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Device mockup chrome */
+.phone-mockup {
+    border: 8px solid #1e293b;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #090d16;
+    position: relative;
+}
+
+.browser-mockup {
+    border: 1px solid #334155;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #090d16;
+}
+
+/* ==========================================================================
+   Complete Light Mode Styling
+   ========================================================================== */
+html.light {
+    color-scheme: light;
+}
+
+html.light body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* Header & Mobile Nav */
+html.light header {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html.light #mobileMenu {
+    background-color: #ffffff !important;
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html.light header nav a,
+html.light #mobileMenu a:not(.text-indigo-400) {
+    color: #475569 !important;
+}
+
+html.light header nav a:hover,
+html.light #mobileMenu a:not(.text-indigo-400):hover {
+    color: #0f172a !important;
+}
+
+/* Sections */
+html.light section {
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html.light #companies,
+html.light #skills {
+    background-color: #f1f5f9 !important;
+}
+
+html.light #about,
+html.light #projects,
+html.light #contact {
+    background-color: #ffffff !important;
+}
+
+/* Cards and Containers */
+html.light .project-card,
+html.light #companies .rounded-2xl,
+html.light #about .rounded-2xl,
+html.light #about .rounded-xl,
+html.light #skills .rounded-2xl,
+html.light #contact .rounded-2xl {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .project-card:hover,
+html.light #companies .rounded-2xl:hover,
+html.light #about .rounded-2xl:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Project Card Media & Placeholders */
+html.light .project-card .aspect-\[16\/10\] {
+    background-color: #f8fafc !important;
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html.light .placeholder-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #f1f5f9 100%) !important;
+}
+
+html.light .placeholder-box .text-slate-200 {
+    color: #0f172a !important;
+}
+
+html.light .placeholder-box .text-slate-500 {
+    color: #64748b !important;
+}
+
+/* Typography */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4 {
+    color: #0f172a !important;
+}
+
+html.light .text-white:not(.bg-indigo-600 *):not(.bg-indigo-600):not(.bg-gradient-to-tr *):not(.bg-gradient-to-tr):not([class*="from-indigo-600"]) {
+    color: #0f172a !important;
+}
+
+html.light .text-slate-100 {
+    color: #0f172a !important;
+}
+
+html.light .text-slate-200 {
+    color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+    color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+    color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+    color: #64748b !important;
+}
+
+html.light .text-slate-600 {
+    color: #94a3b8 !important;
+}
+
+/* Accent text in light mode */
+html.light .text-indigo-400 {
+    color: #4f46e5 !important;
+}
+
+html.light .text-emerald-400 {
+    color: #059669 !important;
+}
+
+html.light .text-cyan-400 {
+    color: #0891b2 !important;
+}
+
+/* Drupal Web Mockup styling in Light Mode */
+html.light .drupal-web-mockup {
+    background-color: #f8fafc !important;
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html.light .drupal-web-mockup .mockup-browser-bar {
+    border-bottom-color: #e2e8f0 !important;
+}
+
+html.light .drupal-web-mockup .mockup-url-bar {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+html.light .drupal-web-mockup .mockup-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .drupal-web-mockup .mockup-input-box {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #1e293b !important;
+}
+
+html.light .drupal-web-mockup .mockup-title {
+    color: #0f172a !important;
+}
+
+/* Borders */
+html.light .border-slate-900,
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-700 {
+    border-color: #e2e8f0 !important;
+}
+
+/* Badges & Pills */
+html.light span.bg-slate-800,
+html.light span.bg-slate-800\/80,
+html.light .rounded.bg-slate-800,
+html.light .rounded.bg-slate-800\/80 {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+html.light .bg-indigo-500\/10 {
+    background-color: #eef2ff !important;
+}
+
+html.light .border-indigo-500\/30,
+html.light .border-indigo-500\/20 {
+    border-color: #c7d2fe !important;
+}
+
+/* Filter & Action Buttons */
+html.light .filter-btn:not(.bg-indigo-600) {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    border-color: #e2e8f0 !important;
+}
+
+html.light .filter-btn:not(.bg-indigo-600):hover {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+html.light .filter-btn.bg-indigo-600 {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+}
+
+/* Email Buttons in Light Mode */
+html.light header a[href^="mailto"] {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px -2px rgba(79, 70, 229, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+html.light header a[href^="mailto"]:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%) !important;
+    box-shadow: 0 6px 16px -2px rgba(79, 70, 229, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+html.light .hero-email-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%) !important;
+    border: 1.5px solid #c7d2fe !important;
+    color: #4338ca !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px -2px rgba(99, 102, 241, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.2s ease !important;
+}
+
+html.light .hero-email-btn svg {
+    color: #4f46e5 !important;
+}
+
+html.light .hero-email-btn:hover {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%) !important;
+    border-color: #818cf8 !important;
+    color: #312e81 !important;
+    box-shadow: 0 8px 20px -2px rgba(99, 102, 241, 0.25) !important;
+    transform: translateY(-2px);
+}
+
+html.light #contact a[href^="mailto"] {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 10px 25px -4px rgba(79, 70, 229, 0.45), 0 4px 6px -2px rgba(79, 70, 229, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+html.light #contact a[href^="mailto"]:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%) !important;
+    box-shadow: 0 14px 28px -4px rgba(79, 70, 229, 0.55) !important;
+    transform: translateY(-2px);
+}
+
+html.light #copyEmailBtn {
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
+    color: #1e293b !important;
+    font-weight: 500 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+html.light #copyEmailBtn svg {
+    color: #4f46e5 !important;
+}
+
+html.light #copyEmailBtn:hover {
+    background: #f8fafc !important;
+    border-color: #818cf8 !important;
+    color: #4338ca !important;
+    box-shadow: 0 6px 16px -2px rgba(99, 102, 241, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+html.light #themeToggleBtn,
+html.light #mobileMenuBtn,
+html.light a[href*="github"]:not(.bg-indigo-600),
+html.light a[href*="linkedin"]:not(.bg-indigo-600) {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #334155 !important;
+}
+
+html.light #themeToggleBtn:hover,
+html.light #mobileMenuBtn:hover,
+html.light a[href*="github"]:hover,
+html.light a[href*="linkedin"]:hover {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+/* Footer */
+html.light footer {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
+}
+
+/* Scrollbar in Light Mode */
+html.light ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
